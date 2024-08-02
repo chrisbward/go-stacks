@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/cbadawi/go-stacks/stacks/internal/models"
+	"github.com/cbadawi/go-stacks/pkg/models"
 )
 
 // ProofOfTransferAPIService ProofOfTransferAPI service
@@ -29,9 +29,9 @@ GetPoxCycle Get PoX cycle
 
 Retrieves details for a PoX cycle
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cycleNumber PoX cycle number
- @return ApiGetPoxCycleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cycleNumber PoX cycle number
+	@return ApiGetPoxCycleRequest
 */
 func (a *ProofOfTransferAPIService) GetPoxCycle(ctx context.Context, cycleNumber int32) ApiGetPoxCycleRequest {
 	return ApiGetPoxCycleRequest{
@@ -42,7 +42,8 @@ func (a *ProofOfTransferAPIService) GetPoxCycle(ctx context.Context, cycleNumber
 }
 
 // Execute executes the request
-//  @return PoxCycle
+//
+//	@return PoxCycle
 func (a *ProofOfTransferAPIService) GetPoxCycleExecute(r ApiGetPoxCycleRequest) (*models.PoxCycle, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -133,10 +134,10 @@ GetPoxCycleSigner Get signer in PoX cycle
 
 Retrieves details for a signer in a PoX cycle
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cycleNumber PoX cycle number
- @param signerKey Signer key
- @return ApiGetPoxCycleSignerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cycleNumber PoX cycle number
+	@param signerKey Signer key
+	@return ApiGetPoxCycleSignerRequest
 */
 func (a *ProofOfTransferAPIService) GetPoxCycleSigner(ctx context.Context, cycleNumber int32, signerKey string) ApiGetPoxCycleSignerRequest {
 	return ApiGetPoxCycleSignerRequest{
@@ -148,7 +149,8 @@ func (a *ProofOfTransferAPIService) GetPoxCycleSigner(ctx context.Context, cycle
 }
 
 // Execute executes the request
-//  @return PoxSigner
+//
+//	@return PoxSigner
 func (a *ProofOfTransferAPIService) GetPoxCycleSignerExecute(r ApiGetPoxCycleSignerRequest) (*models.PoxSigner, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -240,10 +242,10 @@ GetPoxCycleSignerStackers Get stackers for signer in PoX cycle
 
 Retrieves a list of stackers for a signer in a PoX cycle
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cycleNumber PoX cycle number
- @param signerKey Signer key
- @return ApiGetPoxCycleSignerStackersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cycleNumber PoX cycle number
+	@param signerKey Signer key
+	@return ApiGetPoxCycleSignerStackersRequest
 */
 func (a *ProofOfTransferAPIService) GetPoxCycleSignerStackers(ctx context.Context, cycleNumber int32, signerKey string) ApiGetPoxCycleSignerStackersRequest {
 	return ApiGetPoxCycleSignerStackersRequest{
@@ -255,7 +257,8 @@ func (a *ProofOfTransferAPIService) GetPoxCycleSignerStackers(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return PoxCycleSignerStackersListResponse
+//
+//	@return PoxCycleSignerStackersListResponse
 func (a *ProofOfTransferAPIService) GetPoxCycleSignerStackersExecute(r ApiGetPoxCycleSignerStackersRequest) (*models.PoxCycleSignerStackersListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -346,9 +349,9 @@ GetPoxCycleSigners Get signers in PoX cycle
 
 Retrieves a list of signers in a PoX cycle
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param cycleNumber PoX cycle number
- @return ApiGetPoxCycleSignersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cycleNumber PoX cycle number
+	@return ApiGetPoxCycleSignersRequest
 */
 func (a *ProofOfTransferAPIService) GetPoxCycleSigners(ctx context.Context, cycleNumber int32) ApiGetPoxCycleSignersRequest {
 	return ApiGetPoxCycleSignersRequest{
@@ -359,7 +362,8 @@ func (a *ProofOfTransferAPIService) GetPoxCycleSigners(ctx context.Context, cycl
 }
 
 // Execute executes the request
-//  @return PoxCycleSignersListResponse
+//
+//	@return PoxCycleSignersListResponse
 func (a *ProofOfTransferAPIService) GetPoxCycleSignersExecute(r ApiGetPoxCycleSignersRequest) (*models.PoxCycleSignersListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -462,8 +466,8 @@ GetPoxCycles Get PoX cycles
 
 Retrieves a list of PoX cycles
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPoxCyclesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPoxCyclesRequest
 */
 func (a *ProofOfTransferAPIService) GetPoxCycles(ctx context.Context) ApiGetPoxCyclesRequest {
 	return ApiGetPoxCyclesRequest{
@@ -473,7 +477,8 @@ func (a *ProofOfTransferAPIService) GetPoxCycles(ctx context.Context) ApiGetPoxC
 }
 
 // Execute executes the request
-//  @return PoxCycleListResponse
+//
+//	@return PoxCycleListResponse
 func (a *ProofOfTransferAPIService) GetPoxCyclesExecute(r ApiGetPoxCyclesRequest) (*models.PoxCycleListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

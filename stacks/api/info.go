@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/cbadawi/go-stacks/stacks/internal/models"
+	"github.com/cbadawi/go-stacks/pkg/models"
 )
 
 // InfoAPIService InfoAPI service
@@ -28,8 +28,8 @@ GetCoreApiInfo Get Core API info
 
 Retrieves information about the Core API including the server version
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetCoreApiInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetCoreApiInfoRequest
 */
 func (a *InfoAPIService) GetCoreApiInfo(ctx context.Context) ApiGetCoreApiInfoRequest {
 	return ApiGetCoreApiInfoRequest{
@@ -39,7 +39,8 @@ func (a *InfoAPIService) GetCoreApiInfo(ctx context.Context) ApiGetCoreApiInfoRe
 }
 
 // Execute executes the request
-//  @return CoreNodeInfoResponse
+//
+//	@return CoreNodeInfoResponse
 func (a *InfoAPIService) GetCoreApiInfoExecute(r ApiGetCoreApiInfoRequest) (*models.CoreNodeInfoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -128,9 +129,9 @@ GetNetworkBlockTimeByNetwork Get a given network's target block time
 
 Retrieves the target block time for a given network. The network can be mainnet or testnet. The block time is hardcoded and will change throughout the implementation phases of the testnet.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param network the target block time for a given network (testnet, mainnet).
- @return ApiGetNetworkBlockTimeByNetworkRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param network the target block time for a given network (testnet, mainnet).
+	@return ApiGetNetworkBlockTimeByNetworkRequest
 */
 func (a *InfoAPIService) GetNetworkBlockTimeByNetwork(ctx context.Context, network string) ApiGetNetworkBlockTimeByNetworkRequest {
 	return ApiGetNetworkBlockTimeByNetworkRequest{
@@ -141,7 +142,8 @@ func (a *InfoAPIService) GetNetworkBlockTimeByNetwork(ctx context.Context, netwo
 }
 
 // Execute executes the request
-//  @return TargetBlockTime
+//
+//	@return TargetBlockTime
 func (a *InfoAPIService) GetNetworkBlockTimeByNetworkExecute(r ApiGetNetworkBlockTimeByNetworkRequest) (*models.TargetBlockTime, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -230,8 +232,8 @@ GetNetworkBlockTimes Get the network target block time
 
 Retrieves the target block times for mainnet and testnet. The block time is hardcoded and will change throughout the implementation phases of the testnet.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNetworkBlockTimesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetNetworkBlockTimesRequest
 */
 func (a *InfoAPIService) GetNetworkBlockTimes(ctx context.Context) ApiGetNetworkBlockTimesRequest {
 	return ApiGetNetworkBlockTimesRequest{
@@ -241,7 +243,8 @@ func (a *InfoAPIService) GetNetworkBlockTimes(ctx context.Context) ApiGetNetwork
 }
 
 // Execute executes the request
-//  @return NetworkBlockTimesResponse
+//
+//	@return NetworkBlockTimesResponse
 func (a *InfoAPIService) GetNetworkBlockTimesExecute(r ApiGetNetworkBlockTimesRequest) (*models.NetworkBlockTimesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -329,8 +332,8 @@ GetPoxInfo Get Proof-of-Transfer details
 
 Retrieves Proof-of-Transfer (PoX) information. Can be used for Stacking.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPoxInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPoxInfoRequest
 */
 func (a *InfoAPIService) GetPoxInfo(ctx context.Context) ApiGetPoxInfoRequest {
 	return ApiGetPoxInfoRequest{
@@ -340,7 +343,8 @@ func (a *InfoAPIService) GetPoxInfo(ctx context.Context) ApiGetPoxInfoRequest {
 }
 
 // Execute executes the request
-//  @return CoreNodePoxResponse
+//
+//	@return CoreNodePoxResponse
 func (a *InfoAPIService) GetPoxInfoExecute(r ApiGetPoxInfoRequest) (*models.CoreNodePoxResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -428,8 +432,8 @@ GetStatus API status
 
 Retrieves the running status of the Stacks Blockchain API, including the server version and current chain tip information.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetStatusRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetStatusRequest
 */
 func (a *InfoAPIService) GetStatus(ctx context.Context) ApiGetStatusRequest {
 	return ApiGetStatusRequest{
@@ -439,7 +443,8 @@ func (a *InfoAPIService) GetStatus(ctx context.Context) ApiGetStatusRequest {
 }
 
 // Execute executes the request
-//  @return ServerStatusResponse
+//
+//	@return ServerStatusResponse
 func (a *InfoAPIService) GetStatusExecute(r ApiGetStatusRequest) (*models.ServerStatusResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -535,9 +540,8 @@ GetStxSupply Get total and unlocked STX supply
 Retrieves the total and unlocked STX supply. More information on Stacking can be found [here] (https://docs.stacks.co/understand-stacks/stacking).
 **Note:** This uses the estimated future total supply for the year 2050.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetStxSupplyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetStxSupplyRequest
 */
 func (a *InfoAPIService) GetStxSupply(ctx context.Context) ApiGetStxSupplyRequest {
 	return ApiGetStxSupplyRequest{
@@ -547,7 +551,8 @@ func (a *InfoAPIService) GetStxSupply(ctx context.Context) ApiGetStxSupplyReques
 }
 
 // Execute executes the request
-//  @return GetStxSupplyResponse
+//
+//	@return GetStxSupplyResponse
 func (a *InfoAPIService) GetStxSupplyExecute(r ApiGetStxSupplyRequest) (*models.GetStxSupplyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -638,8 +643,8 @@ GetStxSupplyCirculatingPlain Get circulating STX supply in plain text format
 
 Retrieves the STX tokens currently in circulation that have been unlocked as plain text.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetStxSupplyCirculatingPlainRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetStxSupplyCirculatingPlainRequest
 */
 func (a *InfoAPIService) GetStxSupplyCirculatingPlain(ctx context.Context) ApiGetStxSupplyCirculatingPlainRequest {
 	return ApiGetStxSupplyCirculatingPlainRequest{
@@ -649,7 +654,8 @@ func (a *InfoAPIService) GetStxSupplyCirculatingPlain(ctx context.Context) ApiGe
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *InfoAPIService) GetStxSupplyCirculatingPlainExecute(r ApiGetStxSupplyCirculatingPlainRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -738,9 +744,8 @@ GetStxSupplyTotalSupplyPlain Get total STX supply in plain text format
 Retrieves the total supply for STX tokens as plain text.
 **Note:** this uses the estimated future total supply for the year 2050.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetStxSupplyTotalSupplyPlainRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetStxSupplyTotalSupplyPlainRequest
 */
 func (a *InfoAPIService) GetStxSupplyTotalSupplyPlain(ctx context.Context) ApiGetStxSupplyTotalSupplyPlainRequest {
 	return ApiGetStxSupplyTotalSupplyPlainRequest{
@@ -750,7 +755,8 @@ func (a *InfoAPIService) GetStxSupplyTotalSupplyPlain(ctx context.Context) ApiGe
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *InfoAPIService) GetStxSupplyTotalSupplyPlainExecute(r ApiGetStxSupplyTotalSupplyPlainRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -846,9 +852,8 @@ GetTotalStxSupplyLegacyFormat Get total and unlocked STX supply (results formatt
 Retrieves total supply of STX tokens including those currently in circulation that have been unlocked.
 **Note:** this uses the estimated future total supply for the year 2050.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTotalStxSupplyLegacyFormatRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetTotalStxSupplyLegacyFormatRequest
 */
 func (a *InfoAPIService) GetTotalStxSupplyLegacyFormat(ctx context.Context) ApiGetTotalStxSupplyLegacyFormatRequest {
 	return ApiGetTotalStxSupplyLegacyFormatRequest{
@@ -858,7 +863,8 @@ func (a *InfoAPIService) GetTotalStxSupplyLegacyFormat(ctx context.Context) ApiG
 }
 
 // Execute executes the request
-//  @return GetStxSupplyLegacyFormatResponse
+//
+//	@return GetStxSupplyLegacyFormatResponse
 func (a *InfoAPIService) GetTotalStxSupplyLegacyFormatExecute(r ApiGetTotalStxSupplyLegacyFormatRequest) (*models.GetStxSupplyLegacyFormatResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/cbadawi/go-stacks/stacks/internal/models"
+	"github.com/cbadawi/go-stacks/pkg/models"
 )
 
 // StackingRewardsAPIService StackingRewardsAPI service
@@ -42,8 +42,8 @@ GetBurnchainRewardList Get recent burnchain reward recipients
 
 Retrieves a list of recent burnchain (e.g. Bitcoin) reward recipients with the associated amounts and block info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBurnchainRewardListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetBurnchainRewardListRequest
 */
 func (a *StackingRewardsAPIService) GetBurnchainRewardList(ctx context.Context) ApiGetBurnchainRewardListRequest {
 	return ApiGetBurnchainRewardListRequest{
@@ -53,7 +53,8 @@ func (a *StackingRewardsAPIService) GetBurnchainRewardList(ctx context.Context) 
 }
 
 // Execute executes the request
-//  @return BurnchainRewardListResponse
+//
+//	@return BurnchainRewardListResponse
 func (a *StackingRewardsAPIService) GetBurnchainRewardListExecute(r ApiGetBurnchainRewardListRequest) (*models.BurnchainRewardListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -165,9 +166,9 @@ GetBurnchainRewardListByAddress Get recent burnchain reward for the given recipi
 
 Retrieves a list of recent burnchain (e.g. Bitcoin) rewards for the given recipient with the associated amounts and block info
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param address Reward recipient address. Should either be in the native burnchain's format (e.g. B58 for Bitcoin), or if a STX principal address is provided it will be encoded as into the equivalent burnchain format
- @return ApiGetBurnchainRewardListByAddressRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param address Reward recipient address. Should either be in the native burnchain's format (e.g. B58 for Bitcoin), or if a STX principal address is provided it will be encoded as into the equivalent burnchain format
+	@return ApiGetBurnchainRewardListByAddressRequest
 */
 func (a *StackingRewardsAPIService) GetBurnchainRewardListByAddress(ctx context.Context, address string) ApiGetBurnchainRewardListByAddressRequest {
 	return ApiGetBurnchainRewardListByAddressRequest{
@@ -178,7 +179,8 @@ func (a *StackingRewardsAPIService) GetBurnchainRewardListByAddress(ctx context.
 }
 
 // Execute executes the request
-//  @return BurnchainRewardListResponse
+//
+//	@return BurnchainRewardListResponse
 func (a *StackingRewardsAPIService) GetBurnchainRewardListByAddressExecute(r ApiGetBurnchainRewardListByAddressRequest) (*models.BurnchainRewardListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -287,8 +289,8 @@ GetBurnchainRewardSlotHolders Get recent reward slot holders
 
 Retrieves a list of the Bitcoin addresses that would validly receive Proof-of-Transfer commitments.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBurnchainRewardSlotHoldersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetBurnchainRewardSlotHoldersRequest
 */
 func (a *StackingRewardsAPIService) GetBurnchainRewardSlotHolders(ctx context.Context) ApiGetBurnchainRewardSlotHoldersRequest {
 	return ApiGetBurnchainRewardSlotHoldersRequest{
@@ -298,7 +300,8 @@ func (a *StackingRewardsAPIService) GetBurnchainRewardSlotHolders(ctx context.Co
 }
 
 // Execute executes the request
-//  @return BurnchainRewardSlotHolderListResponse
+//
+//	@return BurnchainRewardSlotHolderListResponse
 func (a *StackingRewardsAPIService) GetBurnchainRewardSlotHoldersExecute(r ApiGetBurnchainRewardSlotHoldersRequest) (*models.BurnchainRewardSlotHolderListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -410,9 +413,9 @@ GetBurnchainRewardSlotHoldersByAddress Get recent reward slot holder entries for
 
 Retrieves a list of the Bitcoin addresses that would validly receive Proof-of-Transfer commitments for a given reward slot holder recipient address.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param address Reward slot holder recipient address. Should either be in the native burnchain's format (e.g. B58 for Bitcoin), or if a STX principal address is provided it will be encoded as into the equivalent burnchain format
- @return ApiGetBurnchainRewardSlotHoldersByAddressRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param address Reward slot holder recipient address. Should either be in the native burnchain's format (e.g. B58 for Bitcoin), or if a STX principal address is provided it will be encoded as into the equivalent burnchain format
+	@return ApiGetBurnchainRewardSlotHoldersByAddressRequest
 */
 func (a *StackingRewardsAPIService) GetBurnchainRewardSlotHoldersByAddress(ctx context.Context, address string) ApiGetBurnchainRewardSlotHoldersByAddressRequest {
 	return ApiGetBurnchainRewardSlotHoldersByAddressRequest{
@@ -423,7 +426,8 @@ func (a *StackingRewardsAPIService) GetBurnchainRewardSlotHoldersByAddress(ctx c
 }
 
 // Execute executes the request
-//  @return BurnchainRewardSlotHolderListResponse
+//
+//	@return BurnchainRewardSlotHolderListResponse
 func (a *StackingRewardsAPIService) GetBurnchainRewardSlotHoldersByAddressExecute(r ApiGetBurnchainRewardSlotHoldersByAddressRequest) (*models.BurnchainRewardSlotHolderListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -519,9 +523,9 @@ GetBurnchainRewardsTotalByAddress Get total burnchain rewards for the given reci
 
 Retrieves the total burnchain (e.g. Bitcoin) rewards for a given recipient `address`
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param address Reward recipient address. Should either be in the native burnchain's format (e.g. B58 for Bitcoin), or if a STX principal address is provided it will be encoded as into the equivalent burnchain format
- @return ApiGetBurnchainRewardsTotalByAddressRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param address Reward recipient address. Should either be in the native burnchain's format (e.g. B58 for Bitcoin), or if a STX principal address is provided it will be encoded as into the equivalent burnchain format
+	@return ApiGetBurnchainRewardsTotalByAddressRequest
 */
 func (a *StackingRewardsAPIService) GetBurnchainRewardsTotalByAddress(ctx context.Context, address string) ApiGetBurnchainRewardsTotalByAddressRequest {
 	return ApiGetBurnchainRewardsTotalByAddressRequest{
@@ -532,7 +536,8 @@ func (a *StackingRewardsAPIService) GetBurnchainRewardsTotalByAddress(ctx contex
 }
 
 // Execute executes the request
-//  @return BurnchainRewardsTotal
+//
+//	@return BurnchainRewardsTotal
 func (a *StackingRewardsAPIService) GetBurnchainRewardsTotalByAddressExecute(r ApiGetBurnchainRewardsTotalByAddressRequest) (*models.BurnchainRewardsTotal, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

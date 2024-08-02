@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/cbadawi/go-stacks/stacks/internal/models"
+	"github.com/cbadawi/go-stacks/pkg/models"
 )
 
 // MempoolAPIService MempoolAPI service
@@ -27,9 +27,8 @@ GetMempoolFeePriorities Get mempool transaction fee priorities
 
 Returns estimated fee priorities (in micro-STX) for all transactions that are currently in the mempool. Also returns priorities separated by transaction type.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMempoolFeePrioritiesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetMempoolFeePrioritiesRequest
 */
 func (a *MempoolAPIService) GetMempoolFeePriorities(ctx context.Context) ApiGetMempoolFeePrioritiesRequest {
 	return ApiGetMempoolFeePrioritiesRequest{
@@ -39,7 +38,8 @@ func (a *MempoolAPIService) GetMempoolFeePriorities(ctx context.Context) ApiGetM
 }
 
 // Execute executes the request
-//  @return MempoolFeePriorities
+//
+//	@return MempoolFeePriorities
 func (a *MempoolAPIService) GetMempoolFeePrioritiesExecute(r ApiGetMempoolFeePrioritiesRequest) (*models.MempoolFeePriorities, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

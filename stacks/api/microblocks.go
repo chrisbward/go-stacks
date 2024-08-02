@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/cbadawi/go-stacks/stacks/internal/models"
+	"github.com/cbadawi/go-stacks/pkg/models"
 )
 
 // MicroblocksAPIService MicroblocksAPI service
@@ -29,9 +29,9 @@ GetMicroblockByHash Get microblock
 
 Retrieves a specific microblock by `hash`
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param hash Hash of the microblock
- @return ApiGetMicroblockByHashRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param hash Hash of the microblock
+	@return ApiGetMicroblockByHashRequest
 */
 func (a *MicroblocksAPIService) GetMicroblockByHash(ctx context.Context, hash string) ApiGetMicroblockByHashRequest {
 	return ApiGetMicroblockByHashRequest{
@@ -42,7 +42,8 @@ func (a *MicroblocksAPIService) GetMicroblockByHash(ctx context.Context, hash st
 }
 
 // Execute executes the request
-//  @return Microblock
+//
+//	@return Microblock
 func (a *MicroblocksAPIService) GetMicroblockByHashExecute(r ApiGetMicroblockByHashRequest) (*models.Microblock, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -147,9 +148,8 @@ Retrieves a list of microblocks.
 
 If you need to actively monitor new microblocks, we highly recommend subscribing to [WebSockets or Socket.io](https://github.com/hirosystems/stacks-blockchain-api/tree/master/client) for real-time updates.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMicroblockListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetMicroblockListRequest
 */
 func (a *MicroblocksAPIService) GetMicroblockList(ctx context.Context) ApiGetMicroblockListRequest {
 	return ApiGetMicroblockListRequest{
@@ -159,7 +159,8 @@ func (a *MicroblocksAPIService) GetMicroblockList(ctx context.Context) ApiGetMic
 }
 
 // Execute executes the request
-//  @return MicroblockListResponse
+//
+//	@return MicroblockListResponse
 func (a *MicroblocksAPIService) GetMicroblockListExecute(r ApiGetMicroblockListRequest) (*models.MicroblockListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -256,8 +257,8 @@ GetUnanchoredTxs Get the list of current transactions that belong to unanchored 
 
 Retrieves transactions that have been streamed in microblocks but not yet accepted or rejected in an anchor block
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetUnanchoredTxsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetUnanchoredTxsRequest
 */
 func (a *MicroblocksAPIService) GetUnanchoredTxs(ctx context.Context) ApiGetUnanchoredTxsRequest {
 	return ApiGetUnanchoredTxsRequest{
@@ -267,7 +268,8 @@ func (a *MicroblocksAPIService) GetUnanchoredTxs(ctx context.Context) ApiGetUnan
 }
 
 // Execute executes the request
-//  @return UnanchoredTransactionListResponse
+//
+//	@return UnanchoredTransactionListResponse
 func (a *MicroblocksAPIService) GetUnanchoredTxsExecute(r ApiGetUnanchoredTxsRequest) (*models.UnanchoredTransactionListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

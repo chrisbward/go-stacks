@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/cbadawi/go-stacks/stacks/internal/models"
+	"github.com/cbadawi/go-stacks/pkg/models"
 )
 
 // BurnBlocksAPIService BurnBlocksAPI service
@@ -45,11 +45,10 @@ func (r ApiGetBurnBlocksRequest) Execute() (*models.BurnBlockListResponse, *http
 /*
 GetBurnBlocks Get burn blocks
 
-Retrieves a list of recent burn blocks
+# Retrieves a list of recent burn blocks
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBurnBlocksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetBurnBlocksRequest
 */
 func (a *BurnBlocksAPIService) GetBurnBlocks(ctx context.Context) ApiGetBurnBlocksRequest {
 	return ApiGetBurnBlocksRequest{
@@ -59,7 +58,8 @@ func (a *BurnBlocksAPIService) GetBurnBlocks(ctx context.Context) ApiGetBurnBloc
 }
 
 // Execute executes the request
-//  @return BurnBlockListResponse
+//
+//	@return BurnBlockListResponse
 func (a *BurnBlocksAPIService) GetBurnBlocksExecute(r ApiGetBurnBlocksRequest) (*models.BurnBlockListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

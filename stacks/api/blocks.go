@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/cbadawi/go-stacks/stacks/internal/models"
+	"github.com/cbadawi/go-stacks/pkg/models"
 )
 
 // BlocksAPIService BlocksAPI service
@@ -28,9 +28,8 @@ GetAverageBlockTimes Get average block times
 
 Retrieves average block times (in seconds)
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAverageBlockTimesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAverageBlockTimesRequest
 */
 func (a *BlocksAPIService) GetAverageBlockTimes(ctx context.Context) ApiGetAverageBlockTimesRequest {
 	return ApiGetAverageBlockTimesRequest{
@@ -40,7 +39,8 @@ func (a *BlocksAPIService) GetAverageBlockTimes(ctx context.Context) ApiGetAvera
 }
 
 // Execute executes the request
-//  @return AverageBlockTimesResponse
+//
+//	@return AverageBlockTimesResponse
 func (a *BlocksAPIService) GetAverageBlockTimesExecute(r ApiGetAverageBlockTimesRequest) (*models.AverageBlockTimesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -127,12 +127,11 @@ func (r ApiGetBlockRequest) Execute() (*models.NakamotoBlock, *http.Response, er
 /*
 GetBlock Get block
 
-Retrieves a single block
+# Retrieves a single block
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param heightOrHash filter by block height, hash, index block hash or the constant `latest` to filter for the most recent block
- @return ApiGetBlockRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param heightOrHash filter by block height, hash, index block hash or the constant `latest` to filter for the most recent block
+	@return ApiGetBlockRequest
 */
 func (a *BlocksAPIService) GetBlock(ctx context.Context, heightOrHash models.GetBurnBlockHeightOrHashParameter) ApiGetBlockRequest {
 	return ApiGetBlockRequest{
@@ -153,7 +152,8 @@ func getHeightOrHash(param models.GetBurnBlockHeightOrHashParameter) interface{}
 }
 
 // Execute executes the request
-//  @return NakamotoBlock
+//
+//	@return NakamotoBlock
 func (a *BlocksAPIService) GetBlockExecute(r ApiGetBlockRequest) (*models.NakamotoBlock, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -244,12 +244,11 @@ GetBlockByBurnBlockHash Get block by burnchain block hash
 
 **NOTE:** This endpoint is deprecated in favor of [Get blocks](/api/get-blocks).
 
-Retrieves block details of a specific block for a given burnchain block hash
+# Retrieves block details of a specific block for a given burnchain block hash
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param burnBlockHash Hash of the burnchain block
- @return ApiGetBlockByBurnBlockHashRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param burnBlockHash Hash of the burnchain block
+	@return ApiGetBlockByBurnBlockHashRequest
 
 Deprecated
 */
@@ -262,7 +261,9 @@ func (a *BlocksAPIService) GetBlockByBurnBlockHash(ctx context.Context, burnBloc
 }
 
 // Execute executes the request
-//  @return Block
+//
+//	@return Block
+//
 // Deprecated
 func (a *BlocksAPIService) GetBlockByBurnBlockHashExecute(r ApiGetBlockByBurnBlockHashRequest) (*models.Block, *http.Response, error) {
 	var (
@@ -355,10 +356,9 @@ GetBlockByHash Get block by hash
 
 Retrieves block details of a specific block for a given chain height. You can use the hash from your latest block ('get_block_list' API) to get your block details.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param hash Hash of the block
- @return ApiGetBlockByHashRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param hash Hash of the block
+	@return ApiGetBlockByHashRequest
 
 Deprecated
 */
@@ -371,7 +371,9 @@ func (a *BlocksAPIService) GetBlockByHash(ctx context.Context, hash string) ApiG
 }
 
 // Execute executes the request
-//  @return Block
+//
+//	@return Block
+//
 // Deprecated
 func (a *BlocksAPIService) GetBlockByHashExecute(r ApiGetBlockByHashRequest) (*models.Block, *http.Response, error) {
 	var (
@@ -462,12 +464,11 @@ GetBlockByHeight Get block by height
 
 **NOTE:** This endpoint is deprecated in favor of [Get block](/api/get-block).
 
-Retrieves block details of a specific block at a given block height
+# Retrieves block details of a specific block at a given block height
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param height Height of the block
- @return ApiGetBlockByHeightRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param height Height of the block
+	@return ApiGetBlockByHeightRequest
 
 Deprecated
 */
@@ -480,7 +481,9 @@ func (a *BlocksAPIService) GetBlockByHeight(ctx context.Context, height float32)
 }
 
 // Execute executes the request
-//  @return Block
+//
+//	@return Block
+//
 // Deprecated
 func (a *BlocksAPIService) GetBlockByHeightExecute(r ApiGetBlockByHeightRequest) (*models.Block, *http.Response, error) {
 	var (
@@ -584,13 +587,12 @@ GetBlockList Get recent blocks
 
 **NOTE:** This endpoint is deprecated in favor of [Get blocks](/api/get-blocks).
 
-Retrieves a list of recently mined blocks
+# Retrieves a list of recently mined blocks
 
 If you need to actively monitor new blocks, we highly recommend subscribing to [WebSockets or Socket.io](https://github.com/hirosystems/stacks-blockchain-api/tree/master/client) for real-time updates.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBlockListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetBlockListRequest
 
 Deprecated
 */
@@ -602,7 +604,9 @@ func (a *BlocksAPIService) GetBlockList(ctx context.Context) ApiGetBlockListRequ
 }
 
 // Execute executes the request
-//  @return BlockListResponse
+//
+//	@return BlockListResponse
+//
 // Deprecated
 func (a *BlocksAPIService) GetBlockListExecute(r ApiGetBlockListRequest) (*models.BlockListResponse, *http.Response, error) {
 	var (
@@ -712,11 +716,10 @@ func (r ApiGetBlocksRequest) Execute() (*models.NakamotoBlockListResponse, *http
 /*
 GetBlocks Get blocks
 
-Retrieves a list of recently mined blocks
+# Retrieves a list of recently mined blocks
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBlocksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetBlocksRequest
 */
 func (a *BlocksAPIService) GetBlocks(ctx context.Context) ApiGetBlocksRequest {
 	return ApiGetBlocksRequest{
@@ -726,7 +729,8 @@ func (a *BlocksAPIService) GetBlocks(ctx context.Context) ApiGetBlocksRequest {
 }
 
 // Execute executes the request
-//  @return NakamotoBlockListResponse
+//
+//	@return NakamotoBlockListResponse
 func (a *BlocksAPIService) GetBlocksExecute(r ApiGetBlocksRequest) (*models.NakamotoBlockListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -833,12 +837,11 @@ func (r ApiGetBlocksByBurnBlockRequest) Execute() (*models.NakamotoBlockListResp
 /*
 GetBlocksByBurnBlock Get blocks by burn block
 
-Retrieves a list of blocks confirmed by a specific burn block
+# Retrieves a list of blocks confirmed by a specific burn block
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param heightOrHash filter by burn block height, hash, or the constant `latest` to filter for the most recent burn block
- @return ApiGetBlocksByBurnBlockRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param heightOrHash filter by burn block height, hash, or the constant `latest` to filter for the most recent burn block
+	@return ApiGetBlocksByBurnBlockRequest
 */
 func (a *BlocksAPIService) GetBlocksByBurnBlock(ctx context.Context, heightOrHash models.GetBurnBlockHeightOrHashParameter) ApiGetBlocksByBurnBlockRequest {
 	return ApiGetBlocksByBurnBlockRequest{
@@ -849,7 +852,8 @@ func (a *BlocksAPIService) GetBlocksByBurnBlock(ctx context.Context, heightOrHas
 }
 
 // Execute executes the request
-//  @return NakamotoBlockListResponse
+//
+//	@return NakamotoBlockListResponse
 func (a *BlocksAPIService) GetBlocksByBurnBlockExecute(r ApiGetBlocksByBurnBlockRequest) (*models.NakamotoBlockListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

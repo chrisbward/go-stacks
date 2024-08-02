@@ -10,7 +10,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/cbadawi/go-stacks/stacks/internal/models"
+	"github.com/cbadawi/go-stacks/pkg/models"
 	"github.com/cbadawi/go-stacks/stacks/utils"
 )
 
@@ -53,9 +53,9 @@ GetAddressMempoolTransactions Transactions for address
 
 Retrieves all transactions for a given address that are currently in mempool
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param address Transactions for the address
- @return ApiGetAddressMempoolTransactionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param address Transactions for the address
+	@return ApiGetAddressMempoolTransactionsRequest
 */
 func (a *TransactionsAPIService) GetAddressMempoolTransactions(ctx context.Context, address string) ApiGetAddressMempoolTransactionsRequest {
 	return ApiGetAddressMempoolTransactionsRequest{
@@ -66,7 +66,8 @@ func (a *TransactionsAPIService) GetAddressMempoolTransactions(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return MempoolTransactionListResponse
+//
+//	@return MempoolTransactionListResponse
 func (a *TransactionsAPIService) GetAddressMempoolTransactionsExecute(r ApiGetAddressMempoolTransactionsRequest) (*models.MempoolTransactionListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -205,10 +206,9 @@ Retrieves a paginated list of confirmed transactions sent or received by a STX a
 
 More information on Transaction types can be found [here](https://docs.stacks.co/understand-stacks/transactions#types).
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param address STX address or Smart Contract ID
- @return ApiGetAddressTransactionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param address STX address or Smart Contract ID
+	@return ApiGetAddressTransactionsRequest
 */
 func (a *TransactionsAPIService) GetAddressTransactions(ctx context.Context, address string) ApiGetAddressTransactionsRequest {
 	return ApiGetAddressTransactionsRequest{
@@ -219,7 +219,8 @@ func (a *TransactionsAPIService) GetAddressTransactions(ctx context.Context, add
 }
 
 // Execute executes the request
-//  @return AddressTransactionsV2ListResponse
+//
+//	@return AddressTransactionsV2ListResponse
 func (a *TransactionsAPIService) GetAddressTransactionsExecute(r ApiGetAddressTransactionsRequest) (*models.AddressTransactionsV2ListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -329,13 +330,15 @@ GetDroppedMempoolTransactionList Get dropped mempool transactions
 Retrieves all recently-broadcast transactions that have been dropped from the mempool.
 
 Transactions are dropped from the mempool if:
- * they were stale and awaiting garbage collection or,
- * were expensive,  or
- * were replaced with a new fee
 
+  - they were stale and awaiting garbage collection or,
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDroppedMempoolTransactionListRequest
+  - were expensive,  or
+
+  - were replaced with a new fee
+
+    @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+    @return ApiGetDroppedMempoolTransactionListRequest
 */
 func (a *TransactionsAPIService) GetDroppedMempoolTransactionList(ctx context.Context) ApiGetDroppedMempoolTransactionListRequest {
 	return ApiGetDroppedMempoolTransactionListRequest{
@@ -345,7 +348,8 @@ func (a *TransactionsAPIService) GetDroppedMempoolTransactionList(ctx context.Co
 }
 
 // Execute executes the request
-//  @return models.MempoolTransactionListResponse
+//
+//	@return models.MempoolTransactionListResponse
 func (a *TransactionsAPIService) GetDroppedMempoolTransactionListExecute(r ApiGetDroppedMempoolTransactionListRequest) (*models.MempoolTransactionListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -477,8 +481,8 @@ GetFilteredEvents Transaction Events
 
 Retrieves the list of events filtered by principal (STX address or Smart Contract ID), transaction id or event types. The list of event types is ('smart_contract_log', 'stx_lock', 'stx_asset', 'fungible_token_asset', 'non_fungible_token_asset').
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetFilteredEventsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetFilteredEventsRequest
 */
 func (a *TransactionsAPIService) GetFilteredEvents(ctx context.Context) ApiGetFilteredEventsRequest {
 	return ApiGetFilteredEventsRequest{
@@ -488,7 +492,8 @@ func (a *TransactionsAPIService) GetFilteredEvents(ctx context.Context) ApiGetFi
 }
 
 // Execute executes the request
-//  @return TransactionEventsResponse
+//
+//	@return TransactionEventsResponse
 func (a *TransactionsAPIService) GetFilteredEventsExecute(r ApiGetFilteredEventsRequest) (*models.TransactionEventsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -657,9 +662,8 @@ Retrieves all transactions that have been recently broadcast to the mempool. The
 
 If you need to monitor new transactions, we highly recommend subscribing to [WebSockets or Socket.io](https://github.com/hirosystems/stacks-blockchain-api/tree/master/client) for real-time updates.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMempoolTransactionListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetMempoolTransactionListRequest
 */
 func (a *TransactionsAPIService) GetMempoolTransactionList(ctx context.Context) ApiGetMempoolTransactionListRequest {
 	return ApiGetMempoolTransactionListRequest{
@@ -669,7 +673,8 @@ func (a *TransactionsAPIService) GetMempoolTransactionList(ctx context.Context) 
 }
 
 // Execute executes the request
-//  @return MempoolTransactionListResponse
+//
+//	@return MempoolTransactionListResponse
 func (a *TransactionsAPIService) GetMempoolTransactionListExecute(r ApiGetMempoolTransactionListRequest) (*models.MempoolTransactionListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -788,9 +793,8 @@ GetMempoolTransactionStats Get statistics for mempool transactions
 Queries for transactions counts, age (by block height), fees (simple average), and size.
 All results broken down by transaction type and percentiles (p25, p50, p75, p95).
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMempoolTransactionStatsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetMempoolTransactionStatsRequest
 */
 func (a *TransactionsAPIService) GetMempoolTransactionStats(ctx context.Context) ApiGetMempoolTransactionStatsRequest {
 	return ApiGetMempoolTransactionStatsRequest{
@@ -800,7 +804,8 @@ func (a *TransactionsAPIService) GetMempoolTransactionStats(ctx context.Context)
 }
 
 // Execute executes the request
-//  @return MempoolTransactionStatsResponse
+//
+//	@return MempoolTransactionStatsResponse
 func (a *TransactionsAPIService) GetMempoolTransactionStatsExecute(r ApiGetMempoolTransactionStatsRequest) (*models.MempoolTransactionStatsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -887,12 +892,11 @@ func (r ApiGetRawTransactionByIdRequest) Execute() (*models.GetRawTransactionRes
 /*
 GetRawTransactionById Get Raw Transaction
 
-Retrieves a hex encoded serialized transaction for a given ID
+# Retrieves a hex encoded serialized transaction for a given ID
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param txId Hash of transaction
- @return ApiGetRawTransactionByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param txId Hash of transaction
+	@return ApiGetRawTransactionByIdRequest
 */
 func (a *TransactionsAPIService) GetRawTransactionById(ctx context.Context, txId string) ApiGetRawTransactionByIdRequest {
 	return ApiGetRawTransactionByIdRequest{
@@ -903,7 +907,8 @@ func (a *TransactionsAPIService) GetRawTransactionById(ctx context.Context, txId
 }
 
 // Execute executes the request
-//  @return GetRawTransactionResult
+//
+//	@return GetRawTransactionResult
 func (a *TransactionsAPIService) GetRawTransactionByIdExecute(r ApiGetRawTransactionByIdRequest) (*models.GetRawTransactionResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1012,14 +1017,13 @@ func (r ApiGetTransactionByIdRequest) Execute() (*models.Transaction, *http.Resp
 /*
 GetTransactionById Get transaction
 
-Retrieves transaction details for a given transaction ID
+# Retrieves transaction details for a given transaction ID
 
 `import type { Transaction } from '@stacks/stacks-blockchain-api-types';`
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param txId Hash of transaction
- @return ApiGetTransactionByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param txId Hash of transaction
+	@return ApiGetTransactionByIdRequest
 */
 func (a *TransactionsAPIService) GetTransactionById(ctx context.Context, txId string) ApiGetTransactionByIdRequest {
 	return ApiGetTransactionByIdRequest{
@@ -1030,7 +1034,8 @@ func (a *TransactionsAPIService) GetTransactionById(ctx context.Context, txId st
 }
 
 // Execute executes the request
-//  @return Transaction
+//
+//	@return Transaction
 func (a *TransactionsAPIService) GetTransactionByIdExecute(r ApiGetTransactionByIdRequest) (*models.Transaction, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1226,15 +1231,14 @@ func (r ApiGetTransactionListRequest) Execute() (*models.TransactionResults, *ht
 /*
 GetTransactionList Get recent transactions
 
-Retrieves all recently mined transactions
+# Retrieves all recently mined transactions
 
 If using TypeScript, import typings for this response from our types package:
 
 `import type { TransactionResults } from '@stacks/stacks-blockchain-api-types';`
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTransactionListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetTransactionListRequest
 */
 func (a *TransactionsAPIService) GetTransactionList(ctx context.Context) ApiGetTransactionListRequest {
 	return ApiGetTransactionListRequest{
@@ -1244,7 +1248,8 @@ func (a *TransactionsAPIService) GetTransactionList(ctx context.Context) ApiGetT
 }
 
 // Execute executes the request
-//  @return TransactionResults
+//
+//	@return TransactionResults
 func (a *TransactionsAPIService) GetTransactionListExecute(r ApiGetTransactionListRequest) (*models.TransactionResults, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1390,12 +1395,11 @@ func (r ApiGetTransactionsByBlockRequest) Execute() (*models.TransactionResults,
 /*
 GetTransactionsByBlock Get transactions by block
 
-Retrieves transactions confirmed in a single block
+# Retrieves transactions confirmed in a single block
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param heightOrHash filter by block height, hash, index block hash or the constant `latest` to filter for the most recent block
- @return ApiGetTransactionsByBlockRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param heightOrHash filter by block height, hash, index block hash or the constant `latest` to filter for the most recent block
+	@return ApiGetTransactionsByBlockRequest
 */
 func (a *TransactionsAPIService) GetTransactionsByBlock(ctx context.Context, heightOrHash models.GetBurnBlockHeightOrHashParameter) ApiGetTransactionsByBlockRequest {
 	return ApiGetTransactionsByBlockRequest{
@@ -1406,7 +1410,8 @@ func (a *TransactionsAPIService) GetTransactionsByBlock(ctx context.Context, hei
 }
 
 // Execute executes the request
-//  @return TransactionResults
+//
+//	@return TransactionResults
 func (a *TransactionsAPIService) GetTransactionsByBlockExecute(r ApiGetTransactionsByBlockRequest) (*models.TransactionResults, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1513,10 +1518,9 @@ GetTransactionsByBlockHash Transactions by block hash
 
 Retrieves a list of all transactions within a block for a given block hash.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param blockHash Hash of block
- @return ApiGetTransactionsByBlockHashRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param blockHash Hash of block
+	@return ApiGetTransactionsByBlockHashRequest
 
 Deprecated
 */
@@ -1529,7 +1533,9 @@ func (a *TransactionsAPIService) GetTransactionsByBlockHash(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return TransactionResults
+//
+//	@return TransactionResults
+//
 // Deprecated
 func (a *TransactionsAPIService) GetTransactionsByBlockHashExecute(r ApiGetTransactionsByBlockHashRequest) (*models.TransactionResults, *http.Response, error) {
 	var (
@@ -1647,12 +1653,11 @@ GetTransactionsByBlockHeight Transactions by block height
 
 **NOTE:** This endpoint is deprecated in favor of [Get transactions by block](/api/get-transactions-by-block).
 
-Retrieves all transactions within a block at a given height
+# Retrieves all transactions within a block at a given height
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param height Height of block
- @return ApiGetTransactionsByBlockHeightRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param height Height of block
+	@return ApiGetTransactionsByBlockHeightRequest
 
 Deprecated
 */
@@ -1665,7 +1670,9 @@ func (a *TransactionsAPIService) GetTransactionsByBlockHeight(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return TransactionResults
+//
+//	@return TransactionResults
+//
 // Deprecated
 func (a *TransactionsAPIService) GetTransactionsByBlockHeightExecute(r ApiGetTransactionsByBlockHeightRequest) (*models.TransactionResults, *http.Response, error) {
 	var (
@@ -1793,15 +1800,14 @@ func (r ApiGetTxListDetailsRequest) Execute() (*map[string]models.TransactionLis
 /*
 GetTxListDetails Get list of details for transactions
 
-Retrieves a list of transactions for a given list of transaction IDs
+# Retrieves a list of transactions for a given list of transaction IDs
 
 If using TypeScript, import typings for this response from our types package:
 
 `import type { Transaction } from '@stacks/stacks-blockchain-api-types';`
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTxListDetailsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetTxListDetailsRequest
 */
 func (a *TransactionsAPIService) GetTxListDetails(ctx context.Context) ApiGetTxListDetailsRequest {
 	return ApiGetTxListDetailsRequest{
@@ -1811,7 +1817,8 @@ func (a *TransactionsAPIService) GetTxListDetails(ctx context.Context) ApiGetTxL
 }
 
 // Execute executes the request
-//  @return map[string]TransactionList
+//
+//	@return map[string]TransactionList
 func (a *TransactionsAPIService) GetTxListDetailsExecute(r ApiGetTxListDetailsRequest) (*map[string]models.TransactionList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1937,8 +1944,8 @@ PostCoreNodeTransactions Broadcast raw transaction
 
 Broadcasts raw transactions on the network. You can use the [@stacks/transactions](https://github.com/blockstack/stacks.js) project to generate a raw transaction payload.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCoreNodeTransactionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCoreNodeTransactionsRequest
 */
 func (a *TransactionsAPIService) PostCoreNodeTransactions(ctx context.Context) ApiPostCoreNodeTransactionsRequest {
 	return ApiPostCoreNodeTransactionsRequest{
@@ -1948,7 +1955,8 @@ func (a *TransactionsAPIService) PostCoreNodeTransactions(ctx context.Context) A
 }
 
 // Execute executes the request
-//  @return string
+//
+//	@return string
 func (a *TransactionsAPIService) PostCoreNodeTransactionsExecute(r ApiPostCoreNodeTransactionsRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

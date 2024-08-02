@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"reflect"
 
-	"github.com/cbadawi/go-stacks/stacks/internal/models"
+	"github.com/cbadawi/go-stacks/pkg/models"
 	"github.com/cbadawi/go-stacks/stacks/utils"
 )
 
@@ -73,9 +73,8 @@ Retrieves all events relevant to a Non-Fungible Token. Useful to determine the o
 
 More information on Non-Fungible Tokens on the Stacks blockchain can be found [here](https://docs.stacks.co/write-smart-contracts/tokens#non-fungible-tokens-nfts).
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNftHistoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetNftHistoryRequest
 */
 func (a *NonFungibleTokensAPIService) GetNftHistory(ctx context.Context) ApiGetNftHistoryRequest {
 	return ApiGetNftHistoryRequest{
@@ -85,7 +84,8 @@ func (a *NonFungibleTokensAPIService) GetNftHistory(ctx context.Context) ApiGetN
 }
 
 // Execute executes the request
-//  @return NonFungibleTokenHistoryEventList
+//
+//	@return NonFungibleTokenHistoryEventList
 func (a *NonFungibleTokensAPIService) GetNftHistoryExecute(r ApiGetNftHistoryRequest) (*models.NonFungibleTokenHistoryEventList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -250,9 +250,8 @@ Results can be filtered by one or more asset identifiers and can include metadat
 
 More information on Non-Fungible Tokens on the Stacks blockchain can be found [here](https://docs.stacks.co/write-smart-contracts/tokens#non-fungible-tokens-nfts).
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNftHoldingsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetNftHoldingsRequest
 */
 func (a *NonFungibleTokensAPIService) GetNftHoldings(ctx context.Context) ApiGetNftHoldingsRequest {
 	return ApiGetNftHoldingsRequest{
@@ -262,7 +261,8 @@ func (a *NonFungibleTokensAPIService) GetNftHoldings(ctx context.Context) ApiGet
 }
 
 // Execute executes the request
-//  @return NonFungibleTokenHoldingsList
+//
+//	@return NonFungibleTokenHoldingsList
 func (a *NonFungibleTokensAPIService) GetNftHoldingsExecute(r ApiGetNftHoldingsRequest) (*models.NonFungibleTokenHoldingsList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -426,9 +426,8 @@ Retrieves all mint events for a Non-Fungible Token asset class. Useful to determ
 
 More information on Non-Fungible Tokens on the Stacks blockchain can be found [here](https://docs.stacks.co/write-smart-contracts/tokens#non-fungible-tokens-nfts).
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNftMintsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetNftMintsRequest
 */
 func (a *NonFungibleTokensAPIService) GetNftMints(ctx context.Context) ApiGetNftMintsRequest {
 	return ApiGetNftMintsRequest{
@@ -438,7 +437,8 @@ func (a *NonFungibleTokensAPIService) GetNftMints(ctx context.Context) ApiGetNft
 }
 
 // Execute executes the request
-//  @return NonFungibleTokenMintList
+//
+//	@return NonFungibleTokenMintList
 func (a *NonFungibleTokensAPIService) GetNftMintsExecute(r ApiGetNftMintsRequest) (*models.NonFungibleTokenMintList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

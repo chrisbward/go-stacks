@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/cbadawi/go-stacks/stacks/internal/models"
+	"github.com/cbadawi/go-stacks/pkg/models"
 )
 
 // NamesAPIService NamesAPI service
@@ -29,9 +29,9 @@ FetchSubdomainsListForName Get Name Subdomains
 
 Retrieves the list of subdomains for a specific name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name fully-qualified name
- @return ApiFetchSubdomainsListForNameRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name fully-qualified name
+	@return ApiFetchSubdomainsListForNameRequest
 */
 func (a *NamesAPIService) FetchSubdomainsListForName(ctx context.Context, name string) ApiFetchSubdomainsListForNameRequest {
 	return ApiFetchSubdomainsListForNameRequest{
@@ -42,7 +42,8 @@ func (a *NamesAPIService) FetchSubdomainsListForName(ctx context.Context, name s
 }
 
 // Execute executes the request
-//  @return []string
+//
+//	@return []string
 func (a *NamesAPIService) FetchSubdomainsListForNameExecute(r ApiFetchSubdomainsListForNameRequest) ([]string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -132,9 +133,9 @@ FetchZoneFile Get Zone File
 
 Retrieves a user’s raw zone file. This only works for RFC-compliant zone files. This method returns an error for names that have non-standard zone files.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name fully-qualified name
- @return ApiFetchZoneFileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name fully-qualified name
+	@return ApiFetchZoneFileRequest
 */
 func (a *NamesAPIService) FetchZoneFile(ctx context.Context, name string) ApiFetchZoneFileRequest {
 	return ApiFetchZoneFileRequest{
@@ -145,7 +146,8 @@ func (a *NamesAPIService) FetchZoneFile(ctx context.Context, name string) ApiFet
 }
 
 // Execute executes the request
-//  @return models.BnsFetchFileZoneResponse
+//
+//	@return models.BnsFetchFileZoneResponse
 func (a *NamesAPIService) FetchZoneFileExecute(r ApiFetchZoneFileRequest) (*models.BnsFetchFileZoneResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -262,8 +264,8 @@ GetAllNames Get All Names
 
 Retrieves a list of all names known to the node.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAllNamesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAllNamesRequest
 */
 func (a *NamesAPIService) GetAllNames(ctx context.Context) ApiGetAllNamesRequest {
 	return ApiGetAllNamesRequest{
@@ -273,7 +275,8 @@ func (a *NamesAPIService) GetAllNames(ctx context.Context) ApiGetAllNamesRequest
 }
 
 // Execute executes the request
-//  @return []string
+//
+//	@return []string
 func (a *NamesAPIService) GetAllNamesExecute(r ApiGetAllNamesRequest) ([]string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -374,8 +377,8 @@ GetAllNamespaces Get All Namespaces
 
 Retrieves a list of all namespaces known to the node.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAllNamespacesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAllNamespacesRequest
 */
 func (a *NamesAPIService) GetAllNamespaces(ctx context.Context) ApiGetAllNamespacesRequest {
 	return ApiGetAllNamespacesRequest{
@@ -385,7 +388,8 @@ func (a *NamesAPIService) GetAllNamespaces(ctx context.Context) ApiGetAllNamespa
 }
 
 // Execute executes the request
-//  @return models.BnsGetAllNamespacesResponse
+//
+//	@return models.BnsGetAllNamespacesResponse
 func (a *NamesAPIService) GetAllNamespacesExecute(r ApiGetAllNamespacesRequest) (*models.BnsGetAllNamespacesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -475,10 +479,10 @@ GetHistoricalZoneFile Get Historical Zone File
 
 Retrieves the historical zonefile specified by the username and zone hash.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name fully-qualified name
- @param zoneFileHash zone file hash
- @return ApiGetHistoricalZoneFileRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name fully-qualified name
+	@param zoneFileHash zone file hash
+	@return ApiGetHistoricalZoneFileRequest
 */
 func (a *NamesAPIService) GetHistoricalZoneFile(ctx context.Context, name string, zoneFileHash string) ApiGetHistoricalZoneFileRequest {
 	return ApiGetHistoricalZoneFileRequest{
@@ -490,7 +494,8 @@ func (a *NamesAPIService) GetHistoricalZoneFile(ctx context.Context, name string
 }
 
 // Execute executes the request
-//  @return models.BnsFetchHistoricalZoneFileResponse
+//
+//	@return models.BnsFetchHistoricalZoneFileResponse
 func (a *NamesAPIService) GetHistoricalZoneFileExecute(r ApiGetHistoricalZoneFileRequest) (*models.BnsFetchHistoricalZoneFileResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -602,9 +607,9 @@ GetNameInfo Get Name Details
 
 Retrieves details of a given name including the `address`, `status` and last transaction id - `last_txid`.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name fully-qualified name
- @return ApiGetNameInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name fully-qualified name
+	@return ApiGetNameInfoRequest
 */
 func (a *NamesAPIService) GetNameInfo(ctx context.Context, name string) ApiGetNameInfoRequest {
 	return ApiGetNameInfoRequest{
@@ -615,7 +620,8 @@ func (a *NamesAPIService) GetNameInfo(ctx context.Context, name string) ApiGetNa
 }
 
 // Execute executes the request
-//  @return models.BnsGetNameInfoResponse
+//
+//	@return models.BnsGetNameInfoResponse
 func (a *NamesAPIService) GetNameInfoExecute(r ApiGetNameInfoRequest) (*models.BnsGetNameInfoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -726,9 +732,9 @@ GetNamePrice Get Name Price
 
 Retrieves the price of a name. The `amount` given will be in the smallest possible units of the currency.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name the name to query price information for
- @return ApiGetNamePriceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param name the name to query price information for
+	@return ApiGetNamePriceRequest
 */
 func (a *NamesAPIService) GetNamePrice(ctx context.Context, name string) ApiGetNamePriceRequest {
 	return ApiGetNamePriceRequest{
@@ -739,7 +745,8 @@ func (a *NamesAPIService) GetNamePrice(ctx context.Context, name string) ApiGetN
 }
 
 // Execute executes the request
-//  @return models.BnsGetNamePriceResponse
+//
+//	@return models.BnsGetNamePriceResponse
 func (a *NamesAPIService) GetNamePriceExecute(r ApiGetNamePriceRequest) (*models.BnsGetNamePriceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -830,10 +837,10 @@ GetNamesOwnedByAddress Get Names Owned by Address
 
 Retrieves a list of names owned by the address provided.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param blockchain the layer-1 blockchain for the address
- @param address the address to lookup
- @return ApiGetNamesOwnedByAddressRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param blockchain the layer-1 blockchain for the address
+	@param address the address to lookup
+	@return ApiGetNamesOwnedByAddressRequest
 */
 func (a *NamesAPIService) GetNamesOwnedByAddress(ctx context.Context, blockchain string, address string) ApiGetNamesOwnedByAddressRequest {
 	return ApiGetNamesOwnedByAddressRequest{
@@ -845,7 +852,8 @@ func (a *NamesAPIService) GetNamesOwnedByAddress(ctx context.Context, blockchain
 }
 
 // Execute executes the request
-//  @return models.BnsNamesOwnByAddressResponse
+//
+//	@return models.BnsNamesOwnByAddressResponse
 func (a *NamesAPIService) GetNamesOwnedByAddressExecute(r ApiGetNamesOwnedByAddressRequest) (*models.BnsNamesOwnByAddressResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -953,9 +961,9 @@ GetNamespaceNames Get Namespace Names
 
 Retrieves a list of names within a given namespace.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tld the namespace to fetch names from.
- @return ApiGetNamespaceNamesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tld the namespace to fetch names from.
+	@return ApiGetNamespaceNamesRequest
 */
 func (a *NamesAPIService) GetNamespaceNames(ctx context.Context, tld string) ApiGetNamespaceNamesRequest {
 	return ApiGetNamespaceNamesRequest{
@@ -966,7 +974,8 @@ func (a *NamesAPIService) GetNamespaceNames(ctx context.Context, tld string) Api
 }
 
 // Execute executes the request
-//  @return []string
+//
+//	@return []string
 func (a *NamesAPIService) GetNamespaceNamesExecute(r ApiGetNamespaceNamesRequest) ([]string, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1080,9 +1089,9 @@ GetNamespacePrice Get Namespace Price
 
 Retrieves the price of a namespace. The `amount` given will be in the smallest possible units of the currency.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tld the namespace to fetch price for
- @return ApiGetNamespacePriceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param tld the namespace to fetch price for
+	@return ApiGetNamespacePriceRequest
 */
 func (a *NamesAPIService) GetNamespacePrice(ctx context.Context, tld string) ApiGetNamespacePriceRequest {
 	return ApiGetNamespacePriceRequest{
@@ -1093,7 +1102,8 @@ func (a *NamesAPIService) GetNamespacePrice(ctx context.Context, tld string) Api
 }
 
 // Execute executes the request
-//  @return models.BnsGetNamespacePriceResponse
+//
+//	@return models.BnsGetNamespacePriceResponse
 func (a *NamesAPIService) GetNamespacePriceExecute(r ApiGetNamespacePriceRequest) (*models.BnsGetNamespacePriceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

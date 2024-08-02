@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/cbadawi/go-stacks/stacks/internal/models"
+	"github.com/cbadawi/go-stacks/pkg/models"
 )
 
 // AccountsAPIService AccountsAPI service
@@ -57,9 +57,9 @@ GetAccountAssets Get account assets
 
 Retrieves a list of all assets events associated with an account or a Contract Identifier. This includes Transfers, Mints.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param principal Stacks address or a Contract identifier
- @return ApiGetAccountAssetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param principal Stacks address or a Contract identifier
+	@return ApiGetAccountAssetsRequest
 */
 func (a *AccountsAPIService) GetAccountAssets(ctx context.Context, principal string) ApiGetAccountAssetsRequest {
 	return ApiGetAccountAssetsRequest{
@@ -70,7 +70,8 @@ func (a *AccountsAPIService) GetAccountAssets(ctx context.Context, principal str
 }
 
 // Execute executes the request
-//  @return models.AddressAssetsListResponse
+//
+//	@return models.AddressAssetsListResponse
 func (a *AccountsAPIService) GetAccountAssetsExecute(r ApiGetAccountAssetsRequest) (*models.AddressAssetsListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -189,9 +190,9 @@ GetAccountBalance Get account balances
 
 Retrieves total account balance information for a given Address or Contract Identifier. This includes the balances of  STX Tokens, Fungible Tokens and Non-Fungible Tokens for the account.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param principal Stacks address or a Contract identifier
- @return ApiGetAccountBalanceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param principal Stacks address or a Contract identifier
+	@return ApiGetAccountBalanceRequest
 */
 func (a *AccountsAPIService) GetAccountBalance(ctx context.Context, principal string) ApiGetAccountBalanceRequest {
 	return ApiGetAccountBalanceRequest{
@@ -202,7 +203,8 @@ func (a *AccountsAPIService) GetAccountBalance(ctx context.Context, principal st
 }
 
 // Execute executes the request
-//  @return AddressBalanceResponse
+//
+//	@return AddressBalanceResponse
 func (a *AccountsAPIService) GetAccountBalanceExecute(r ApiGetAccountBalanceRequest) (*models.AddressBalanceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -337,10 +339,9 @@ GetAccountInbound Get inbound STX transfers
 Retrieves a list of STX transfers with memos to the given principal. This includes regular transfers from a stx-transfer transaction type,
 and transfers from contract-call transactions a the `send-many-memo` bulk sending contract.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param principal Stacks address or a Contract identifier
- @return ApiGetAccountInboundRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param principal Stacks address or a Contract identifier
+	@return ApiGetAccountInboundRequest
 */
 func (a *AccountsAPIService) GetAccountInbound(ctx context.Context, principal string) ApiGetAccountInboundRequest {
 	return ApiGetAccountInboundRequest{
@@ -351,7 +352,8 @@ func (a *AccountsAPIService) GetAccountInbound(ctx context.Context, principal st
 }
 
 // Execute executes the request
-//  @return AddressStxInboundListResponse
+//
+//	@return AddressStxInboundListResponse
 func (a *AccountsAPIService) GetAccountInboundExecute(r ApiGetAccountInboundRequest) (*models.AddressStxInboundListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -471,16 +473,15 @@ func (r ApiGetAccountInfoRequest) Execute() (*models.AccountDataResponse, *http.
 /*
 GetAccountInfo Get account info
 
-Retrieves the account data for a given Account or a Contract Identifier
+# Retrieves the account data for a given Account or a Contract Identifier
 
 Where balance is the hex encoding of a unsigned 128-bit integer (big-endian), nonce is an unsigned 64-bit integer, and the proofs are provided as hex strings.
 
 For non-existent accounts, this does not return a 404 error, rather it returns an object with balance and nonce of 0.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param principal Stacks address or a Contract identifier
- @return ApiGetAccountInfoRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param principal Stacks address or a Contract identifier
+	@return ApiGetAccountInfoRequest
 */
 func (a *AccountsAPIService) GetAccountInfo(ctx context.Context, principal string) ApiGetAccountInfoRequest {
 	return ApiGetAccountInfoRequest{
@@ -491,7 +492,8 @@ func (a *AccountsAPIService) GetAccountInfo(ctx context.Context, principal strin
 }
 
 // Execute executes the request
-//  @return AccountDataResponse
+//
+//	@return AccountDataResponse
 func (a *AccountsAPIService) GetAccountInfoExecute(r ApiGetAccountInfoRequest) (*models.AccountDataResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -601,9 +603,9 @@ GetAccountNonces Get the latest nonce used by an account
 
 Retrieves the latest nonce values used by an account by inspecting the mempool, microblock transactions, and anchored transactions.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param principal Stacks address
- @return ApiGetAccountNoncesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param principal Stacks address
+	@return ApiGetAccountNoncesRequest
 */
 func (a *AccountsAPIService) GetAccountNonces(ctx context.Context, principal string) ApiGetAccountNoncesRequest {
 	return ApiGetAccountNoncesRequest{
@@ -614,7 +616,8 @@ func (a *AccountsAPIService) GetAccountNonces(ctx context.Context, principal str
 }
 
 // Execute executes the request
-//  @return AddressNonces
+//
+//	@return AddressNonces
 func (a *AccountsAPIService) GetAccountNoncesExecute(r ApiGetAccountNoncesRequest) (*models.AddressNonces, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -724,9 +727,9 @@ GetAccountStxBalance Get account STX balance
 
 Retrieves STX token balance for a given Address or Contract Identifier.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param principal Stacks address or a Contract identifier.
- @return ApiGetAccountStxBalanceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param principal Stacks address or a Contract identifier.
+	@return ApiGetAccountStxBalanceRequest
 */
 func (a *AccountsAPIService) GetAccountStxBalance(ctx context.Context, principal string) ApiGetAccountStxBalanceRequest {
 	return ApiGetAccountStxBalanceRequest{
@@ -737,7 +740,8 @@ func (a *AccountsAPIService) GetAccountStxBalance(ctx context.Context, principal
 }
 
 // Execute executes the request
-//  @return AddressStxBalanceResponse
+//
+//	@return AddressStxBalanceResponse
 func (a *AccountsAPIService) GetAccountStxBalanceExecute(r ApiGetAccountStxBalanceRequest) (*models.AddressStxBalanceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -873,10 +877,9 @@ Retrieves a list of all Transactions for a given Address or Contract Identifier.
 
 If you need to actively monitor new transactions for an address or contract id, we highly recommend subscribing to [WebSockets or Socket.io](https://github.com/hirosystems/stacks-blockchain-api/tree/master/client) for real-time updates.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param principal Stacks address or a Contract identifier
- @return ApiGetAccountTransactionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param principal Stacks address or a Contract identifier
+	@return ApiGetAccountTransactionsRequest
 
 Deprecated
 */
@@ -889,7 +892,9 @@ func (a *AccountsAPIService) GetAccountTransactions(ctx context.Context, princip
 }
 
 // Execute executes the request
-//  @return AddressTransactionsListResponse
+//
+//	@return AddressTransactionsListResponse
+//
 // Deprecated
 func (a *AccountsAPIService) GetAccountTransactionsExecute(r ApiGetAccountTransactionsRequest) (*models.AddressTransactionsListResponse, *http.Response, error) {
 	var (
@@ -1033,9 +1038,9 @@ GetAccountTransactionsWithTransfers Get account transactions including STX trans
 
 Retrieve all transactions for an account or contract identifier including STX transfers for each transaction.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param principal Stacks address or a Contract identifier
- @return ApiGetAccountTransactionsWithTransfersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param principal Stacks address or a Contract identifier
+	@return ApiGetAccountTransactionsWithTransfersRequest
 
 Deprecated
 */
@@ -1048,7 +1053,9 @@ func (a *AccountsAPIService) GetAccountTransactionsWithTransfers(ctx context.Con
 }
 
 // Execute executes the request
-//  @return AddressTransactionsWithTransfersListResponse
+//
+//	@return AddressTransactionsWithTransfersListResponse
+//
 // Deprecated
 func (a *AccountsAPIService) GetAccountTransactionsWithTransfersExecute(r ApiGetAccountTransactionsWithTransfersRequest) (*models.AddressTransactionsWithTransfersListResponse, *http.Response, error) {
 	var (
@@ -1158,10 +1165,10 @@ GetSingleTransactionWithTransfers Get account transaction information for specif
 
 Retrieves transaction details for a given Transaction Id `tx_id`, for a given account or contract Identifier.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param principal Stacks address or a contract identifier
- @param txId Transaction id
- @return ApiGetSingleTransactionWithTransfersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param principal Stacks address or a contract identifier
+	@param txId Transaction id
+	@return ApiGetSingleTransactionWithTransfersRequest
 
 Deprecated
 */
@@ -1175,7 +1182,9 @@ func (a *AccountsAPIService) GetSingleTransactionWithTransfers(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return AddressTransactionWithTransfers
+//
+//	@return AddressTransactionWithTransfers
+//
 // Deprecated
 func (a *AccountsAPIService) GetSingleTransactionWithTransfersExecute(r ApiGetSingleTransactionWithTransfersRequest) (*models.AddressTransactionWithTransfers, *http.Response, error) {
 	var (

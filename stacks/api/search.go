@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/cbadawi/go-stacks/stacks/internal/models"
+	"github.com/cbadawi/go-stacks/pkg/models"
 )
 
 // SearchAPIService SearchAPI service
@@ -36,9 +36,9 @@ SearchById Search
 
 Search blocks, transactions, contracts, or accounts by hash/ID
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id The hex hash string for a block or transaction, account address, or contract address
- @return ApiSearchByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id The hex hash string for a block or transaction, account address, or contract address
+	@return ApiSearchByIdRequest
 */
 func (a *SearchAPIService) SearchById(ctx context.Context, id string) ApiSearchByIdRequest {
 	return ApiSearchByIdRequest{
@@ -49,7 +49,8 @@ func (a *SearchAPIService) SearchById(ctx context.Context, id string) ApiSearchB
 }
 
 // Execute executes the request
-//  @return SearchResult
+//
+//	@return SearchResult
 func (a *SearchAPIService) SearchByIdExecute(r ApiSearchByIdRequest) (*models.SearchResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

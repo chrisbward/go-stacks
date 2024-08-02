@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/cbadawi/go-stacks/stacks/internal/models"
+	"github.com/cbadawi/go-stacks/pkg/models"
 )
 
 // StackingAPIService StackingAPI service
@@ -57,9 +57,9 @@ GetPoolDelegations Stacking pool members
 
 Retrieves the list of stacking pool members for a given delegator principal.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param poolPrincipal Address principal of the stacking pool delegator
- @return ApiGetPoolDelegationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param poolPrincipal Address principal of the stacking pool delegator
+	@return ApiGetPoolDelegationsRequest
 */
 func (a *StackingAPIService) GetPoolDelegations(ctx context.Context, poolPrincipal string) ApiGetPoolDelegationsRequest {
 	return ApiGetPoolDelegationsRequest{
@@ -70,7 +70,8 @@ func (a *StackingAPIService) GetPoolDelegations(ctx context.Context, poolPrincip
 }
 
 // Execute executes the request
-//  @return models.PoolDelegationsResponse
+//
+//	@return models.PoolDelegationsResponse
 func (a *StackingAPIService) GetPoolDelegationsExecute(r ApiGetPoolDelegationsRequest) (*models.PoolDelegationsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

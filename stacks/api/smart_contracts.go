@@ -9,7 +9,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/cbadawi/go-stacks/stacks/internal/models"
+	"github.com/cbadawi/go-stacks/pkg/models"
 	"github.com/cbadawi/go-stacks/stacks/utils"
 )
 
@@ -49,12 +49,11 @@ Call a read-only public function on a given smart contract.
 
 The smart contract and function are specified using the URL path. The arguments and the simulated tx-sender are supplied via the POST body in the following JSON format:
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param contractAddress Stacks address
- @param contractName Contract name
- @param functionName Function name
- @return ApiCallReadOnlyFunctionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param contractAddress Stacks address
+	@param contractName Contract name
+	@param functionName Function name
+	@return ApiCallReadOnlyFunctionRequest
 */
 func (a *SmartContractsAPIService) CallReadOnlyFunction(ctx context.Context, contractAddress string, contractName string, functionName string) ApiCallReadOnlyFunctionRequest {
 	return ApiCallReadOnlyFunctionRequest{
@@ -67,7 +66,8 @@ func (a *SmartContractsAPIService) CallReadOnlyFunction(ctx context.Context, con
 }
 
 // Execute executes the request
-//  @return ReadOnlyFunctionSuccessResponse
+//
+//	@return ReadOnlyFunctionSuccessResponse
 func (a *SmartContractsAPIService) CallReadOnlyFunctionExecute(r ApiCallReadOnlyFunctionRequest) (*models.ReadOnlyFunctionSuccessResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -174,9 +174,9 @@ GetContractById Get contract info
 
 Retrieves details of a contract with a given `contract_id`
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param contractId Contract identifier formatted as `<contract_address>.<contract_name>`
- @return ApiGetContractByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param contractId Contract identifier formatted as `<contract_address>.<contract_name>`
+	@return ApiGetContractByIdRequest
 */
 func (a *SmartContractsAPIService) GetContractById(ctx context.Context, contractId string) ApiGetContractByIdRequest {
 	return ApiGetContractByIdRequest{
@@ -187,7 +187,8 @@ func (a *SmartContractsAPIService) GetContractById(ctx context.Context, contract
 }
 
 // Execute executes the request
-//  @return SmartContract
+//
+//	@return SmartContract
 func (a *SmartContractsAPIService) GetContractByIdExecute(r ApiGetContractByIdRequest) (*models.SmartContract, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -310,12 +311,11 @@ The key to lookup in the map is supplied via the POST body. This should be suppl
 
 In the response, `data` is the hex serialization of the map response. Note that map responses are Clarity option types, for non-existent values, this is a serialized none, and for all other responses, it is a serialized (some ...) object.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param contractAddress Stacks address
- @param contractName Contract name
- @param mapName Map name
- @return ApiGetContractDataMapEntryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param contractAddress Stacks address
+	@param contractName Contract name
+	@param mapName Map name
+	@return ApiGetContractDataMapEntryRequest
 */
 func (a *SmartContractsAPIService) GetContractDataMapEntry(ctx context.Context, contractAddress string, contractName string, mapName string) ApiGetContractDataMapEntryRequest {
 	return ApiGetContractDataMapEntryRequest{
@@ -328,7 +328,8 @@ func (a *SmartContractsAPIService) GetContractDataMapEntry(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return MapEntryResponse
+//
+//	@return MapEntryResponse
 func (a *SmartContractsAPIService) GetContractDataMapEntryExecute(r ApiGetContractDataMapEntryRequest) (*models.MapEntryResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
@@ -452,9 +453,9 @@ GetContractEventsById Get contract events
 
 Retrieves a list of events that have been triggered by a given `contract_id`
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param contractId Contract identifier formatted as `<contract_address>.<contract_name>`
- @return ApiGetContractEventsByIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param contractId Contract identifier formatted as `<contract_address>.<contract_name>`
+	@return ApiGetContractEventsByIdRequest
 */
 func (a *SmartContractsAPIService) GetContractEventsById(ctx context.Context, contractId string) ApiGetContractEventsByIdRequest {
 	return ApiGetContractEventsByIdRequest{
@@ -465,7 +466,8 @@ func (a *SmartContractsAPIService) GetContractEventsById(ctx context.Context, co
 }
 
 // Execute executes the request
-//  @return TransactionEvent
+//
+//	@return TransactionEvent
 func (a *SmartContractsAPIService) GetContractEventsByIdExecute(r ApiGetContractEventsByIdRequest) (*models.TransactionEvent, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -575,10 +577,10 @@ GetContractInterface Get contract interface
 
 Retrieves a contract interface with a given `contract_address` and `contract name`
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param contractAddress Stacks address
- @param contractName Contract name
- @return ApiGetContractInterfaceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param contractAddress Stacks address
+	@param contractName Contract name
+	@return ApiGetContractInterfaceRequest
 */
 func (a *SmartContractsAPIService) GetContractInterface(ctx context.Context, contractAddress string, contractName string) ApiGetContractInterfaceRequest {
 	return ApiGetContractInterfaceRequest{
@@ -590,7 +592,8 @@ func (a *SmartContractsAPIService) GetContractInterface(ctx context.Context, con
 }
 
 // Execute executes the request
-//  @return ContractInterfaceResponse
+//
+//	@return ContractInterfaceResponse
 func (a *SmartContractsAPIService) GetContractInterfaceExecute(r ApiGetContractInterfaceRequest) (*models.ContractInterfaceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -699,10 +702,10 @@ GetContractSource Get contract source
 
 Retrieves the Clarity source code of a given contract, along with the block height it was published in, and the MARF proof for the data
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param contractAddress Stacks address
- @param contractName Contract name
- @return ApiGetContractSourceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param contractAddress Stacks address
+	@param contractName Contract name
+	@return ApiGetContractSourceRequest
 */
 func (a *SmartContractsAPIService) GetContractSource(ctx context.Context, contractAddress string, contractName string) ApiGetContractSourceRequest {
 	return ApiGetContractSourceRequest{
@@ -714,7 +717,8 @@ func (a *SmartContractsAPIService) GetContractSource(ctx context.Context, contra
 }
 
 // Execute executes the request
-//  @return ContractSourceResponse
+//
+//	@return ContractSourceResponse
 func (a *SmartContractsAPIService) GetContractSourceExecute(r ApiGetContractSourceRequest) (*models.ContractSourceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -831,8 +835,8 @@ GetContractsByTrait Get contracts by trait
 
 Retrieves a list of contracts based on the following traits listed in JSON format -  functions, variables, maps, fungible tokens and non-fungible tokens
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetContractsByTraitRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetContractsByTraitRequest
 */
 func (a *SmartContractsAPIService) GetContractsByTrait(ctx context.Context) ApiGetContractsByTraitRequest {
 	return ApiGetContractsByTraitRequest{
@@ -842,7 +846,8 @@ func (a *SmartContractsAPIService) GetContractsByTrait(ctx context.Context) ApiG
 }
 
 // Execute executes the request
-//  @return ContractListResponse
+//
+//	@return ContractListResponse
 func (a *SmartContractsAPIService) GetContractsByTraitExecute(r ApiGetContractsByTraitRequest) (*models.ContractListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -947,9 +952,8 @@ GetSmartContractsStatus Get smart contracts status
 
 Retrieves the deployment status of multiple smart contracts.
 
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSmartContractsStatusRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetSmartContractsStatusRequest
 */
 func (a *SmartContractsAPIService) GetSmartContractsStatus(ctx context.Context) ApiGetSmartContractsStatusRequest {
 	return ApiGetSmartContractsStatusRequest{
@@ -959,7 +963,8 @@ func (a *SmartContractsAPIService) GetSmartContractsStatus(ctx context.Context) 
 }
 
 // Execute executes the request
-//  @return map[string]SmartContractsStatusResponse
+//
+//	@return map[string]SmartContractsStatusResponse
 func (a *SmartContractsAPIService) GetSmartContractsStatusExecute(r ApiGetSmartContractsStatusRequest) (*map[string]models.SmartContractsStatusResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
