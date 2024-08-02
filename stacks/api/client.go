@@ -21,8 +21,8 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/cbadawi/go-stacks/stacks/config"
-	"github.com/cbadawi/go-stacks/stacks/utils"
+	"github.com/chrisbward/go-stacks/stacks/config"
+	"github.com/chrisbward/go-stacks/stacks/utils"
 )
 
 var (

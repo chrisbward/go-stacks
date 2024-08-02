@@ -1,4 +1,4 @@
-module github.com/cbadawi/go-stacks
+module github.com/chrisbward/go-stacks
 
 go 1.18
 

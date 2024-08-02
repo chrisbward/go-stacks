@@ -25,7 +25,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/cbadawi/go-stacks"
+	openapiclient "github.com/chrisbward/go-stacks"
 )
 
 func main() {
@@ -95,7 +95,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/cbadawi/go-stacks"
+	openapiclient "github.com/chrisbward/go-stacks"
 )
 
 func main() {

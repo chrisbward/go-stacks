@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	config "github.com/cbadawi/go-stacks/stacks/config"
+	config "github.com/chrisbward/go-stacks/stacks/config"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

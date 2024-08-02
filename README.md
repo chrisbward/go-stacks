@@ -33,8 +33,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/cbadawi/go-stacks/stacks/api"
-	"github.com/cbadawi/go-stacks/stacks/config"
+	"github.com/chrisbward/go-stacks/stacks/api"
+	"github.com/chrisbward/go-stacks/stacks/config"
 )
 
 func main() {

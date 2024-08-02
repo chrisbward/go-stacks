@@ -3,7 +3,7 @@ package models
 import (
 	"encoding/json"
 
-	"github.com/cbadawi/go-stacks/stacks/utils"
+	"github.com/chrisbward/go-stacks/stacks/utils"
 )
 
 // checks if the TransactionFeeEstimateResponseEstimationsInner type satisfies the MappedNullable interface at compile time

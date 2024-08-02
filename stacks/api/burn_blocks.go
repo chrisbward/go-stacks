@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/cbadawi/go-stacks/pkg/models"
+	"github.com/chrisbward/go-stacks/pkg/models"
 )
 
 // BurnBlocksAPIService BurnBlocksAPI service

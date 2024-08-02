@@ -10,8 +10,8 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/cbadawi/go-stacks/pkg/models"
-	"github.com/cbadawi/go-stacks/stacks/utils"
+	"github.com/chrisbward/go-stacks/pkg/models"
+	"github.com/chrisbward/go-stacks/stacks/utils"
 )
 
 // TransactionsAPIService TransactionsAPI service

@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/cbadawi/go-stacks/stacks/utils"
+	"github.com/chrisbward/go-stacks/stacks/utils"
 )
 
 // checks if the RosettaCoinCoinIdentifier type satisfies the MappedNullable interface at compile time

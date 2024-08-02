@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/cbadawi/go-stacks/pkg/models"
+	"github.com/chrisbward/go-stacks/pkg/models"
 )
 
 // AccountsAPIService AccountsAPI service
